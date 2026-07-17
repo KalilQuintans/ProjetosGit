@@ -2,7 +2,11 @@ import os
 
 class book():
     def __init__(self):
+
+        #Titulos salvos em listas, pois como é um  codigo simples, preferi as listas do que dicionarios.
         self.titulo = [' Soneto de Fidelidade (Vinicius de Moraes)', 'Ora direis ouvir estrelas (Olavo Bilac)', 'Canção do Exílio (Gonçalves Dias)']
+
+        #Poemas salvos em listas, poucos dados, dando preferencia para listas e nao dicionarios pois acredito que por ser simples, seria mais facil manipular
         self.livro = ['''                De tudo, ao meu amor serei atento
                 Antes, e com tal zelo, e sempre, e tanto
                 Que mesmo em face do maior encanto
@@ -50,13 +54,14 @@ class book():
 
     def passaPag(self):
         while True:
-            os.system('cls')
 
+            #Limpeza do terminal, experiencia mais limpa e organizada
+            os.system('cls')
             print('-_-' *10, self.titulo[self.NumPag], '-_-' * 10)
 
             print(self.livro[self.NumPag])
 
-
+            #Codigo para atualização de opções
             if self.NumPag < 2 and self.NumPag > 0:
                 print('<---- Anterior      Próximo---->')
                 self.passapag = input()
@@ -68,6 +73,8 @@ class book():
                 self.passapag = input()
             self.passapag.lower()
 
+
+            #Codigo para atualização de página e termino
             if self.passapag == 'proximo':
                 self.NumPag = self.NumPag + 1
 
